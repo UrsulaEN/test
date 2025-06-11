@@ -30,7 +30,10 @@
         function pushEvent(eventName) {
             window.dataLayer.push({
                 'event': eventName,
-                'timestamp': new Date().toISOString()
+                'timestamp': new Date().toISOString(),
+                'button_id': eventName.replace('click_', ''),
+                'button_text': buttonMap[eventName] || 'Unknown',
+                'page_path': window.location.pathname
             });
             console.log(`Pushed ${eventName} to dataLayer`);
         }
