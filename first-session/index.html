@@ -26,8 +26,14 @@
 
     <script>
         window.dataLayer = window.dataLayer || [];
-        
-        function pushEvent(eventName) {
+
+        const buttonMap = {
+            'click_button1': 'Button 1',
+            'click_button2': 'Button 2',
+            'click_button3': 'Button 3'
+        };
+
+    function pushEvent(eventName) {
             window.dataLayer.push({
                 'event': eventName,
                 'timestamp': new Date().toISOString(),
